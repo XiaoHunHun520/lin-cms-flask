@@ -14,7 +14,13 @@ from app.util.common import basedir
 def register_blueprints(app):
     from app.api.cms import create_cms
     from app.api.v1 import create_v1
+    from app.api.blog import create_blog
+    from app.api.kami import create_kami
+    from app.api.pcapp import create_pcapp
 
+    app.register_blueprint(create_pcapp(), url_prefix="/pcapp")
+    app.register_blueprint(create_kami(), url_prefix="/kami")
+    app.register_blueprint(create_blog(), url_prefix="/blog")
     app.register_blueprint(create_v1(), url_prefix="/v1")
     app.register_blueprint(create_cms(), url_prefix="/cms")
 

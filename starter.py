@@ -22,7 +22,6 @@ app = create_app(
     config_MESSAGE=MESSAGE,
 )
 
-
 if app.config.get("ENV") != "production":
 
     @app.route("/")

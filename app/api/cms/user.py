@@ -229,6 +229,7 @@ def get_allowed_apis():
     setattr(user, "permissions", res)
     setattr(user, "admin", user.is_admin)
     user._fields.extend(["admin", "permissions"])
+    print(user)
 
     return user
 
